@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>polayground</title>
+    <script>
+       // alert('hi');
+    var myString = 'bbb bbb aaa aaa aaa ccc';
+    // result should be 
+    // aaa occur 3 times
+    // bbb occur 2 times
+    // ccc occur 1 times
+
+    function frequestWords(str) {
+        var stringArray = str.split(' ');
+        var array = [];
+        var obj = {};
+        for (var i =0; i < stringArray.length; i++) {
+            if (obj[stringArray[i]]) {
+                obj[stringArray[i]]++
+            } else {
+                obj[stringArray[i]] = 1;
+            }
+        }
+        console.log(obj);
+        for (var k in obj) {
+        array.push({
+            'key': k,
+            'value': obj[k]
+        })
+        }
+        console.log(array);
+        array.sort(function(a,b){
+            return a.value - b.value
+        });
+        console.log(array);
+    }
+    
+
+
+
+    frequestWords(myString);
+
+    // sorted by ascending
+    // 0: {key: "ccc", value: 1}
+    // 1: {key: "bbb", value: 2}
+    // 2: {key: "aaa", value: 3}
+
+
+    
+    </script>
+
+</head>
+
+<body>
+
+
+
+    
+</body>
+</html>
